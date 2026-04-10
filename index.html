@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>採用・広報ダイジェスト 2026 | 7garden</title>
+<title>採用広報 戦略 & ダイジェスト 2026 | 7garden</title>
 <style>
 :root {
   --green: #1D7B4E;
@@ -15,6 +15,9 @@
   --blue: #2A5FA8;
   --blue-light: rgba(42,95,168,0.07);
   --blue-border: rgba(42,95,168,0.2);
+  --red: #C0392B;
+  --red-light: rgba(192,57,43,0.07);
+  --red-border: rgba(192,57,43,0.2);
   --text: #1a1a1a;
   --text-sub: #555;
   --text-muted: #888;
@@ -25,32 +28,43 @@
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --text:#e0e0e0;--text-sub:#aaa;--text-muted:#777;
-    --bg:#191919;--bg-sub:#222;--border:#333;--border-light:#2c2c2c;
-    --green-light:rgba(29,123,78,0.13);--green-border:rgba(29,123,78,0.28);
-    --gold:#C8A840;--gold-light:rgba(200,168,64,0.11);--gold-border:rgba(200,168,64,0.28);
-    --blue-light:rgba(42,95,168,0.12);--blue-border:rgba(42,95,168,0.28);
+    --text:#e0e0e0; --text-sub:#aaa; --text-muted:#777;
+    --bg:#191919; --bg-sub:#222; --border:#333; --border-light:#2c2c2c;
+    --green-light:rgba(29,123,78,0.13); --green-border:rgba(29,123,78,0.28);
+    --gold:#C8A840; --gold-light:rgba(200,168,64,0.11); --gold-border:rgba(200,168,64,0.28);
+    --blue-light:rgba(42,95,168,0.12); --blue-border:rgba(42,95,168,0.28);
+    --red-light:rgba(192,57,43,0.1); --red-border:rgba(192,57,43,0.25);
   }
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:system-ui,-apple-system,sans-serif;font-size:15px;line-height:1.7;color:var(--text);background:var(--bg);}
 .page{max-width:880px;margin:0 auto;padding:2.5rem 2rem;}
 
+/* Section */
 .section{margin-bottom:3.5rem;padding-bottom:3rem;border-bottom:1px solid var(--border);}
 .section:last-child{border-bottom:none;}
 .sec-num{font-size:11px;font-weight:600;letter-spacing:.1em;color:var(--green);text-transform:uppercase;margin-bottom:4px;}
 .sec-title{font-size:22px;font-weight:600;color:var(--text);margin-bottom:10px;line-height:1.3;}
 .sec-sub{font-size:14px;color:var(--text-sub);line-height:1.75;margin-bottom:24px;max-width:660px;}
 
-.cover{padding:2.5rem 0 2.5rem;border-bottom:1px solid var(--border);margin-bottom:3.5rem;}
+/* Cover */
+.cover{padding:2.5rem 0;border-bottom:1px solid var(--border);margin-bottom:3.5rem;}
 .cover-eyebrow{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--green);margin-bottom:12px;}
-.cover-title{font-size:30px;font-weight:600;line-height:1.25;margin-bottom:12px;}
+.cover-title{font-size:30px;font-weight:600;line-height:1.25;margin-bottom:10px;}
 .cover-note{font-size:14px;color:var(--text-sub);line-height:1.7;margin-bottom:20px;}
-.cover-meta{display:flex;gap:24px;flex-wrap:wrap;font-size:13px;color:var(--text-muted);}
+.cover-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:20px;}
+.cs{padding:14px 16px;border-right:1px solid var(--border);}
+.cs:last-child{border-right:none;}
+.cs-label{font-size:11px;color:var(--text-muted);margin-bottom:4px;}
+.cs-val{font-size:20px;font-weight:600;color:var(--text);line-height:1;}
+.cs-val small{font-size:12px;color:var(--text-muted);font-weight:400;}
+.cs-sub{font-size:11px;color:var(--text-sub);margin-top:3px;}
+.cover-meta{display:flex;gap:20px;flex-wrap:wrap;font-size:12px;color:var(--text-muted);}
 .cover-meta strong{color:var(--text-sub);}
 
-.cards-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:20px;}
-.cards-2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:20px;}
+/* Cards */
+.cards-3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:20px;}
+.cards-2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:20px;}
 .card{background:var(--bg-sub);border:1px solid var(--border);border-radius:10px;padding:20px;}
 .card.green{border-top:3px solid var(--green);}
 .card.gold{border-top:3px solid var(--gold);}
@@ -64,32 +78,58 @@ body{font-family:system-ui,-apple-system,sans-serif;font-size:15px;line-height:1
 .card ul li{font-size:13px;color:var(--text-sub);padding-left:16px;position:relative;line-height:1.6;}
 .card ul li::before{content:'—';position:absolute;left:0;color:var(--text-muted);font-size:11px;top:2px;}
 
-.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:24px;}
-.kpi{background:var(--bg-sub);border:1px solid var(--border);border-radius:10px;padding:18px 20px;position:relative;overflow:hidden;}
+/* KPI */
+.kpis{display:grid;gap:14px;margin-bottom:24px;}
+.kpis-4{grid-template-columns:repeat(4,1fr);}
+.kpis-3{grid-template-columns:repeat(3,1fr);}
+.kpi{background:var(--bg-sub);border:1px solid var(--border);border-radius:10px;padding:16px 18px;position:relative;overflow:hidden;}
 .kpi::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--green);}
 .kpi.gold::before{background:var(--gold);}
 .kpi.blue::before{background:var(--blue);}
 .kpi-label{font-size:12px;color:var(--text-muted);margin-bottom:6px;}
-.kpi-val{font-size:32px;font-weight:600;line-height:1;color:var(--text);}
-.kpi-val small{font-size:15px;color:var(--text-muted);font-weight:400;}
+.kpi-val{font-size:28px;font-weight:600;line-height:1;color:var(--text);}
+.kpi-val small{font-size:14px;color:var(--text-muted);font-weight:400;}
+.kpi-sub{font-size:11px;color:var(--text-sub);margin-top:5px;}
 
-.msg{background:var(--green-light);border:1px solid var(--green-border);border-radius:10px;padding:16px 20px;margin-bottom:20px;}
-.msg-label{font-size:11px;font-weight:600;letter-spacing:.08em;color:var(--green);text-transform:uppercase;margin-bottom:6px;}
+/* Msg */
+.msg{border-radius:10px;padding:16px 20px;margin-bottom:20px;}
+.msg.green{background:var(--green-light);border:1px solid var(--green-border);}
+.msg.gold{background:var(--gold-light);border:1px solid var(--gold-border);}
+.msg.red{background:var(--red-light);border:1px solid var(--red-border);}
+.msg-label{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px;}
+.msg.green .msg-label{color:var(--green);}
+.msg.gold .msg-label{color:var(--gold);}
+.msg.red .msg-label{color:var(--red);}
 .msg p{font-size:14px;color:var(--text);line-height:1.75;}
 .msg p strong{font-weight:600;}
-.msg.gold{background:var(--gold-light);border-color:var(--gold-border);}
-.msg.gold .msg-label{color:var(--gold);}
 
-.tbl{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:6px;}
+/* Table */
+.tbl{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:8px;}
 .tbl th{text-align:left;font-size:11px;font-weight:600;color:var(--text-muted);letter-spacing:.06em;text-transform:uppercase;padding:8px 12px;border-bottom:1px solid var(--border);}
 .tbl td{padding:11px 12px;border-bottom:1px solid var(--border-light);color:var(--text-sub);vertical-align:top;line-height:1.65;}
 .tbl td:first-child{color:var(--text);font-weight:500;}
 .tbl tr:last-child td{border-bottom:none;}
 .tbl tr:hover td{background:var(--bg-sub);}
-.tbl .green{color:var(--green);font-weight:600;}
-.tbl .muted{color:var(--text-muted);font-style:italic;font-weight:400;}
+.tbl .c-green{color:var(--green);font-weight:600;}
+.tbl .c-muted{color:var(--text-muted);font-style:italic;font-weight:400;}
 
-.phases{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:20px;}
+/* Tag */
+.tag{display:inline-block;padding:3px 9px;border-radius:4px;font-size:11px;font-weight:600;}
+.tag.green{background:var(--green-light);color:var(--green);border:1px solid var(--green-border);}
+.tag.gold{background:var(--gold-light);color:var(--gold);border:1px solid var(--gold-border);}
+.tag.blue{background:var(--blue-light);color:var(--blue);border:1px solid var(--blue-border);}
+
+/* AX box */
+.ax-box{background:var(--bg-sub);border-radius:10px;padding:18px 20px;margin:14px 0;}
+.ax-title{font-size:11px;font-weight:600;letter-spacing:.08em;color:var(--text-muted);text-transform:uppercase;margin-bottom:14px;}
+.ax-row{display:flex;gap:14px;align-items:flex-start;margin-bottom:10px;}
+.ax-row:last-child{margin-bottom:0;}
+.ax-num{font-size:11px;font-weight:600;color:var(--green);min-width:22px;padding-top:1px;}
+.ax-text{font-size:13px;color:var(--text-sub);line-height:1.7;}
+.ax-text strong{font-weight:600;color:var(--text);display:block;margin-bottom:3px;}
+
+/* Phase */
+.phases{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:20px;}
 .ph{padding:22px 20px;border-right:1px solid var(--border);}
 .ph:last-child{border-right:none;}
 .ph.active{background:var(--green-light);}
@@ -100,6 +140,7 @@ body{font-family:system-ui,-apple-system,sans-serif;font-size:15px;line-height:1
 .ph ul li{font-size:13px;color:var(--text-sub);padding-left:14px;position:relative;line-height:1.6;}
 .ph ul li::before{content:'';position:absolute;left:0;top:9px;width:6px;height:1px;background:var(--green);}
 
+/* Timeline */
 .timeline{display:flex;flex-direction:column;border:1px solid var(--border);border-radius:10px;overflow:hidden;}
 .tl-header{display:grid;grid-template-columns:60px 1fr 1fr;background:var(--bg-sub);border-bottom:1px solid var(--border);}
 .tl-header div{padding:8px 14px;font-size:11px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em;border-right:1px solid var(--border-light);}
@@ -111,6 +152,7 @@ body{font-family:system-ui,-apple-system,sans-serif;font-size:15px;line-height:1
 .tl-main{padding:14px 16px;font-size:13px;color:var(--text-sub);line-height:1.65;border-right:1px solid var(--border-light);}
 .tl-sub{padding:14px 16px;font-size:13px;color:var(--text-muted);line-height:1.65;}
 
+/* Step */
 .step{border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:16px;}
 .step-head{display:flex;align-items:center;gap:12px;padding:14px 18px;background:var(--bg-sub);border-bottom:1px solid var(--border);}
 .step-badge{font-size:11px;font-weight:600;letter-spacing:.1em;color:var(--green);text-transform:uppercase;}
@@ -123,6 +165,7 @@ body{font-family:system-ui,-apple-system,sans-serif;font-size:15px;line-height:1
 .step-item-label{font-size:12px;font-weight:600;color:var(--text-sub);margin-bottom:6px;letter-spacing:.04em;}
 .step-item p{font-size:13px;color:var(--text-sub);line-height:1.65;}
 
+/* Media */
 .media-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
 .media-card{border:1px solid var(--border);border-radius:10px;overflow:hidden;}
 .media-head{padding:14px 16px;background:var(--bg-sub);border-bottom:1px solid var(--border);}
@@ -134,18 +177,14 @@ body{font-family:system-ui,-apple-system,sans-serif;font-size:15px;line-height:1
 .media-body ul li{font-size:13px;color:var(--text-sub);padding-left:14px;position:relative;line-height:1.6;}
 .media-body ul li::before{content:'—';position:absolute;left:0;color:var(--text-muted);font-size:11px;top:1px;}
 
-.tag{display:inline-block;padding:3px 9px;border-radius:4px;font-size:11px;font-weight:600;}
-.tag.green{background:var(--green-light);color:var(--green);border:1px solid var(--green-border);}
-.tag.gold{background:var(--gold-light);color:var(--gold);border:1px solid var(--gold-border);}
-.tag.blue{background:var(--blue-light);color:var(--blue);border:1px solid var(--blue-border);}
-
 .dlabel{font-size:11px;font-weight:600;letter-spacing:.1em;color:var(--text-muted);text-transform:uppercase;margin:24px 0 12px;}
+.sig{font-size:12px;color:var(--text-muted);font-style:italic;margin-top:12px;}
 
 @media(max-width:640px){
   .cards-3,.phases,.media-grid{grid-template-columns:1fr;}
-  .kpis{grid-template-columns:1fr 1fr;}
+  .kpis-4,.kpis-3{grid-template-columns:1fr 1fr;}
+  .cover-stats{grid-template-columns:1fr 1fr;}
   .step-body{grid-template-columns:1fr;}
-  .step-item:nth-child(2n){border-right:none;}
   .step-item:nth-child(-n+2){border-top:1px solid var(--border-light);}
   .step-item:first-child{border-top:none;}
   .tl-header,.tl-row{grid-template-columns:52px 1fr;}
@@ -156,23 +195,77 @@ body{font-family:system-ui,-apple-system,sans-serif;font-size:15px;line-height:1
 <body>
 <div class="page">
 
-<!-- COVER -->
+<!-- ══ COVER ══ -->
 <div class="cover">
-  <div class="cover-eyebrow">7garden · 採用・広報ダイジェスト v6</div>
-  <h1 class="cover-title">採用広報の方針と<br>2026年の進め方</h1>
-  <p class="cover-note">制作・発信・管理は採用広報チームが担当します。<br>みなさんは情報提供と確認だけでOKです。</p>
+  <div class="cover-eyebrow">7garden · 採用広報 戦略 & ダイジェスト 2026</div>
+  <h1 class="cover-title">ひとを集める前に、物語を語る。</h1>
+  <p class="cover-note">
+    制作・発信・管理は採用広報チームが担当します。みなさんは情報提供と確認だけでOKです。
+  </p>
+  <div class="cover-stats">
+    <div class="cs">
+      <div class="cs-label">現在（2026年）</div>
+      <div class="cs-val">50<small>名</small></div>
+      <div class="cs-sub">4棟 / 90室</div>
+    </div>
+    <div class="cs">
+      <div class="cs-label">2030年</div>
+      <div class="cs-val">300<small>名</small></div>
+      <div class="cs-sub">20棟 / 400室</div>
+    </div>
+    <div class="cs">
+      <div class="cs-label">2035年</div>
+      <div class="cs-val">600<small>名</small></div>
+      <div class="cs-sub">40棟 / 800室</div>
+    </div>
+    <div class="cs">
+      <div class="cs-label">10年間採用総数</div>
+      <div class="cs-val">+550<small>名</small></div>
+      <div class="cs-sub">年55名 / 月4〜5名</div>
+    </div>
+  </div>
   <div class="cover-meta">
+    <span><strong>室長</strong> 北野 賢（CEO）</span>
+    <span><strong>設立</strong> 2026年4月</span>
     <span><strong>対象</strong> 本部メンバー向け</span>
-    <span><strong>更新</strong> 2026年4月</span>
+    <span><strong>ビジョン</strong> 誇れる「とき」をデザインする</span>
   </div>
 </div>
 
 
-<!-- 02 -->
+<!-- ══ 01. WHY NOW ══ -->
+<div class="section">
+  <div class="sec-num">01</div>
+  <h2 class="sec-title">第二創業。採用活動にフルコミット。</h2>
+  <p class="sec-sub">売上750M・営業利益率25.4%（競合カソク3.7%・SQUEEZE7.1%の3倍超）——これだけの差別化要因がありながら、採用市場では「7gardenで働きたい」という指名動機がまだ存在しない。</p>
+
+  <div class="cards-3">
+    <div class="card green">
+      <div class="card-label green">01 — 成長計画が採用を要求</div>
+      <p style="font-size:13px;color:var(--text-sub);line-height:1.7">2035年に40棟・600名。現在50名から<strong>12倍</strong>に増やす。年間55名・毎月4〜5名を10年間維持しなければ達成できない。採用広報は今すぐ整備すべきインフラだ。</p>
+    </div>
+    <div class="card">
+      <div class="card-label green">02 — エンプロイヤーブランド未確立</div>
+      <p style="font-size:13px;color:var(--text-sub);line-height:1.7">ホテル業界の人手不足は構造的。<strong>求人媒体含め露出拡大、エージェント活用は最小化</strong>——自社ブランドが人を引き寄せる構造を作る。</p>
+    </div>
+    <div class="card">
+      <div class="card-label green">03 — 広報投資は三位一体</div>
+      <p style="font-size:13px;color:var(--text-sub);line-height:1.7">採用広報コンテンツはゲスト獲得・LP投資家への信頼構築・メディア露出に<strong>同時に作用</strong>する。採用費ではなく、会社の資産形成への投資として位置づける。</p>
+    </div>
+  </div>
+
+  <div class="msg red">
+    <div class="msg-label">⚠ 今動かなければ詰まる</div>
+    <p>採用広報の効果が出るまでに最低6ヶ月〜1年かかる。Phase 1（2026〜2028年）で新川2丁目初棟開業・受託棟数拡大が重なるタイミングに間に合わせるには、今が最後のスタート地点だ。</p>
+  </div>
+</div>
+
+
+<!-- ══ 02. 3つの発信軸 ══ -->
 <div class="section">
   <div class="sec-num">02</div>
   <h2 class="sec-title">3つの発信軸</h2>
-  <div class="msg">
+  <div class="msg green">
     <div class="msg-label">優先方針</div>
     <p>まず力を入れるのは<strong>採用発信</strong>。2026年中に多くのスタッフを採用する必要があるためです。</p>
   </div>
@@ -212,11 +305,12 @@ body{font-family:system-ui,-apple-system,sans-serif;font-size:15px;line-height:1
 </div>
 
 
-<!-- 03 -->
+<!-- ══ 03. 競合比較 ══ -->
 <div class="section">
   <div class="sec-num">03</div>
   <h2 class="sec-title">同じ業界の会社と比べてみる</h2>
   <p class="sec-sub">どの会社も「1行のコンセプト」が出発点。</p>
+
   <table class="tbl" style="margin-bottom:32px">
     <thead><tr><th>会社</th><th>1行コンセプト</th><th>広報の特徴</th></tr></thead>
     <tbody>
@@ -224,12 +318,13 @@ body{font-family:system-ui,-apple-system,sans-serif;font-size:15px;line-height:1
       <tr><td>Staple</td><td>ソフトデベロッパー</td><td>note開業奮闘日記・グローバル建築メディア掲載</td></tr>
       <tr><td>UDS</td><td>世界がワクワクするまちづくり</td><td>Wantedly Awards受賞・施設別採用説明会</td></tr>
       <tr>
-        <td class="green">7garden</td>
-        <td class="muted">これから言語化</td>
-        <td class="muted">AI・福岡集中・感性×数字の両立（仮）</td>
+        <td class="c-green">7garden</td>
+        <td class="c-muted">これから言語化</td>
+        <td class="c-muted">AI・福岡集中・感性×数字の両立（仮）</td>
       </tr>
     </tbody>
   </table>
+
   <div class="dlabel">7gardenがすでに持っているもの — 広報視点でまだ発信できていない強み</div>
   <div class="cards-3">
     <div class="card green">
@@ -260,11 +355,218 @@ body{font-family:system-ui,-apple-system,sans-serif;font-size:15px;line-height:1
 </div>
 
 
-<!-- 04 -->
+<!-- ══ 04. 採用の規模感・目標 ══ -->
 <div class="section">
   <div class="sec-num">04</div>
+  <h2 class="sec-title">採用の規模感・目標</h2>
+  <p class="sec-sub">棟が増える＝仲間が増える。まず2026〜2027年の2年間で80名、10年間で+550名を積み上げる。</p>
+
+  <div class="dlabel">2年間の採用目標（2026〜2027）</div>
+  <div class="kpis kpis-3" style="margin-bottom:28px">
+    <div class="kpi">
+      <div class="kpi-label">正社員（ホテル支配人・本部）</div>
+      <div class="kpi-val">20<small> 名</small></div>
+    </div>
+    <div class="kpi gold">
+      <div class="kpi-label">アルバイト（各施設現場）</div>
+      <div class="kpi-val">60<small> 名</small></div>
+    </div>
+    <div class="kpi blue">
+      <div class="kpi-label">合計採用</div>
+      <div class="kpi-val">80<small> 名</small></div>
+    </div>
+  </div>
+
+  <div class="dlabel">10年間の成長ロードマップ</div>
+  <div class="kpis kpis-4" style="margin-bottom:24px">
+    <div class="kpi">
+      <div class="kpi-label">年間採用数（純増）</div>
+      <div class="kpi-val">55<small> 名/年</small></div>
+      <div class="kpi-sub">10年間平均</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">月間採用ペース</div>
+      <div class="kpi-val">4〜5<small> 名/月</small></div>
+      <div class="kpi-sub">継続的に維持</div>
+    </div>
+    <div class="kpi gold">
+      <div class="kpi-label">10年間採用総数</div>
+      <div class="kpi-val">+550<small> 名</small></div>
+      <div class="kpi-sub">純増ベース</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">1拠点チーム規模</div>
+      <div class="kpi-val">15<small> 名</small></div>
+      <div class="kpi-sub">全フェーズ共通</div>
+    </div>
+  </div>
+
+  <div class="dlabel">施設ごとのスケジュール（確認中）</div>
+  <table class="tbl" style="margin-bottom:24px">
+    <thead><tr><th>施設名</th><th>開業予定</th><th>特徴</th><th>採用開始</th></tr></thead>
+    <tbody>
+      <tr><td>住吉長屋ホテル</td><td>2026年5月</td><td>無人型</td><td class="c-muted">確認中</td></tr>
+      <tr><td>春吉ホテル1</td><td>2026年10月</td><td>カフェ併設</td><td class="c-green">2026年4月〜</td></tr>
+      <tr><td>春吉ホテル2</td><td>2026年12月</td><td>—</td><td class="c-green">2026年6月〜</td></tr>
+      <tr><td>祇園町 LAID BACK</td><td>2027年2月</td><td>プール、カフェ</td><td class="c-green">2026年8月〜</td></tr>
+      <tr><td>大名 Le Réservoir</td><td>2028年春</td><td>110室、プール、カフェ</td><td class="c-muted">2027年中〜</td></tr>
+      <tr><td>今泉ホテル</td><td>2028年春</td><td>カフェ併設</td><td class="c-muted">2027年中〜</td></tr>
+    </tbody>
+  </table>
+
+  <table class="tbl">
+    <thead><tr><th>フェーズ</th><th>期間</th><th>棟数</th><th>仲間の数</th><th>採用上の優先課題</th></tr></thead>
+    <tbody>
+      <tr><td>Phase 1 — 足場固め</td><td>2026〜2028</td><td>〜10棟</td><td>〜100名</td><td>現場リーダー・幹部人材。採用広報の型を確立する期間。</td></tr>
+      <tr><td>Phase 2 — スケールアップ</td><td>2029〜2032</td><td>〜20棟</td><td>〜300名</td><td>ブランドが確立していれば「引き寄せる」採用に切り替わる。</td></tr>
+      <tr><td>Phase 3 — プラットフォーム</td><td>2033〜2035</td><td>40棟</td><td>600名</td><td>「指名応募」が採用の主流に。スタッフ自身が発信者になっている状態。</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<!-- ══ 05. 誰に届けるか ══ -->
+<div class="section">
+  <div class="sec-num">05</div>
+  <h2 class="sec-title">誰に届けるか。</h2>
+  <p class="sec-sub">A層（幹部候補）× C層（ホスト志向）× ブランドファンの三層設計。「全員向け」の発信は誰にも刺さらない。</p>
+
+  <table class="tbl" style="margin-bottom:20px">
+    <thead>
+      <tr>
+        <th>層</th>
+        <th>ペルソナ</th>
+        <th>求めているもの</th>
+        <th>主なチャネル</th>
+        <th style="color:var(--green)">刺さるコンテンツ<br><span style="font-weight:400;font-size:10px">← みんなで考えよう</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="tag gold">A Layer</span><br>幹部候補</td>
+        <td>AIエンジニア<br>幹部人材（ビジネスデブ）</td>
+        <td>急成長フェーズの経営経験<br>財務健全性・成長計画</td>
+        <td>Wantedly<br>YouTrust<br>note・専門誌</td>
+        <td style="color:var(--text-muted);font-style:italic;font-size:12px">—</td>
+      </tr>
+      <tr>
+        <td><span class="tag green">C Layer</span><br>ホスト志向</td>
+        <td>サービス業経験者<br>街に根ざして働きたい人<br>AIと共存して働きたい人</td>
+        <td>ゲストとの時間に集中できる環境<br>「管理ではなくホスト」の仕事<br>長期的に働ける場所</td>
+        <td>Instagram<br>SNS<br>Wantedly</td>
+        <td style="color:var(--text-muted);font-style:italic;font-size:12px">—</td>
+      </tr>
+      <tr>
+        <td><span class="tag blue">Brand Fan</span><br>潜在層</td>
+        <td>7gardenのゲスト・宿泊者<br>ホテル・建築・デザイン好き</td>
+        <td>好きな会社・空間と関わること<br>転職タイミングが来たときの候補先</td>
+        <td>Instagram<br>note</td>
+        <td style="color:var(--text-muted);font-style:italic;font-size:12px">—</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="msg green">
+    <div class="msg-label">設計思想</div>
+    <p>A層は「指名動機型」で来る。求人より先に、7gardenの成長計画と財務健全性を発信し続けることで、タイミングが来たとき「あの会社に行きたい」と動く。C層は「共感型」で来る。スタッフの日常とAX後の働き方を見せ、「この環境で働きたい」と思わせる。ブランドファンは半年〜2年後に応募してくる——最も採用コストがゼロに近い経路だ。</p>
+  </div>
+</div>
+
+
+<!-- ══ 06. 本部採用 ══ -->
+<div class="section">
+  <div class="sec-num">06</div>
+  <h2 class="sec-title">本部採用</h2>
+  <p class="sec-sub">1年半以内に5名の採用を目指します。特にAIエンジニアは競争が激しいため、早めに動きます。</p>
+
+  <div class="kpis kpis-3" style="margin-bottom:28px">
+    <div class="kpi">
+      <div class="kpi-label">AIエンジニア</div>
+      <div class="kpi-val">3<small> 名</small></div>
+    </div>
+    <div class="kpi gold">
+      <div class="kpi-label">マーケ責任者</div>
+      <div class="kpi-val">1<small> 名</small></div>
+    </div>
+    <div class="kpi blue">
+      <div class="kpi-label">土地仕入れ</div>
+      <div class="kpi-val">1<small> 名</small></div>
+    </div>
+  </div>
+
+  <table class="tbl">
+    <thead><tr><th>ポジション</th><th>求める人物像</th><th>採用アプローチ</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><span class="tag green">AIエンジニア</span></td>
+        <td>LLM・プロダクト開発経験<br>リアル×オンラインの掛け合わせに興味<br>AI×ホテル業務に挑戦したい人</td>
+        <td>田原・井上と要件定義（4月）<br>スカウト媒体（Green・Findy）<br>DX×ホテルの面白さを前面に</td>
+      </tr>
+      <tr>
+        <td><span class="tag gold">マーケ責任者</span></td>
+        <td>デジタルマーケ・SNS運用経験<br>経営に近いポジションを望む人<br>ホテル・観光業界への興味</td>
+        <td>募集要項をシンプルに整理（5月）<br>Wantedlyでストーリー型訴求<br>カジュアル面談から始める設計</td>
+      </tr>
+      <tr>
+        <td><span class="tag blue">土地仕入れ</span></td>
+        <td>不動産・デベロッパー経験<br>実績あり、ネットワークあり<br>カルチャーフィット</td>
+        <td>ターゲット企業リスト作成<br>不動産業界向け媒体を選定<br>リファラル採用を優先的に活用</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="msg gold" style="margin-top:16px">
+    <div class="msg-label">リファラルインセンティブ</div>
+    <p>紹介による採用には <strong>50〜100万円</strong> のインセンティブを設計。社内に告知します（4月）。</p>
+  </div>
+</div>
+
+
+<!-- ══ 07. AX × 採用 ══ -->
+<div class="section">
+  <div class="sec-num">07</div>
+  <h2 class="sec-title">AXが、採用の最強の差別化になる。</h2>
+  <p class="sec-sub">AIを「個人のツール（Level 1）」ではなく「組織のOS（Level 3）」にする——このAX宣言は、採用においても極めて強力なメッセージになる。</p>
+
+  <div class="msg gold">
+    <div class="msg-label">キックオフ2026 CEOメッセージ</div>
+    <p style="font-style:italic">「AIという最強の仲間が加わるだけだ。制約にとらわれずチャレンジする。高い当事者意識でやり抜く。知恵を結集し共創する。このバリューは何も変わらない。」</p>
+    <p class="sig">— 北野賢 / キックオフ2026</p>
+  </div>
+
+  <div class="ax-box">
+    <div class="ax-title">採用コンテンツとしてのAX — 3つの切り口</div>
+    <div class="ax-row">
+      <div class="ax-num">01</div>
+      <div class="ax-text">
+        <strong>「AIと一緒に作った資料」をそのまま発信する</strong>
+        「この資料自体が、AIと一緒に作ったもの」——AXを語る言葉より、AXを実践している事実の方が強い。同様のマインドを持つ人材を引き寄せる。
+      </div>
+    </div>
+    <div class="ax-row">
+      <div class="ax-num">02</div>
+      <div class="ax-text">
+        <strong>「現場スタッフがAIで何を変えたか」を語る</strong>
+        フロントスタッフがClaudeで何をしているか、支配人がAIで報告書をゼロにした話——具体的なビフォーアフターがC層へのリクルーティングメッセージになる。
+      </div>
+    </div>
+    <div class="ax-row">
+      <div class="ax-num">03</div>
+      <div class="ax-text">
+        <strong>「人間にしかできない仕事に集中できる」を訴求する</strong>
+        記憶・計算・管理をAIに渡し、ゲストの時間に全力を使える——C層にとって「自分が本当にやりたかった仕事」に直結する最強の採用メッセージだ。
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══ 08. 2026年の進め方 ══ -->
+<div class="section">
+  <div class="sec-num">08</div>
   <h2 class="sec-title">2026年の進め方</h2>
   <p class="sec-sub">福岡の集中開業に向けて逆算で動きます。まず4〜6月の土台づくりがいちばん大切です。</p>
+
   <div class="phases">
     <div class="ph">
       <div class="ph-label">Phase 1</div>
@@ -304,91 +606,72 @@ body{font-family:system-ui,-apple-system,sans-serif;font-size:15px;line-height:1
 </div>
 
 
-<!-- 05 -->
+<!-- ══ 09. 受け皿を整える ══ -->
 <div class="section">
-  <div class="sec-num">05</div>
-  <h2 class="sec-title">本部採用</h2>
-  <p class="sec-sub">1年半以内に5名の採用を目指します。特にAIエンジニアは競争が激しいため、早めに動きます。</p>
-  <div class="kpis" style="margin-bottom:28px">
-    <div class="kpi">
-      <div class="kpi-label">AIエンジニア</div>
-      <div class="kpi-val">3<small> 名</small></div>
+  <div class="sec-num">09</div>
+  <h2 class="sec-title">発信の前に、まず「受け皿」を整える</h2>
+  <p class="sec-sub">発信を見て「気になった」人が来たとき、応募・問い合わせできる場所が整っていることが先決です。</p>
+
+  <div class="step">
+    <div class="step-head">
+      <span class="step-badge">Step 1</span>
+      <span class="step-title">受け皿を整える</span>
+      <span class="step-period">3〜4月</span>
     </div>
-    <div class="kpi gold">
-      <div class="kpi-label">マーケ責任者</div>
-      <div class="kpi-val">1<small> 名</small></div>
-    </div>
-    <div class="kpi blue">
-      <div class="kpi-label">土地仕入れ</div>
-      <div class="kpi-val">1<small> 名</small></div>
+    <div class="step-body">
+      <div class="step-item">
+        <div class="step-item-label">採用サイト</div>
+        <p>CEOメッセージ・支配人インタビュー・募集要項を独立設計</p>
+      </div>
+      <div class="step-item">
+        <div class="step-item-label">Wantedly</div>
+        <p>会社の世界観・MVVを更新。ストーリー記事を月1本ペースで</p>
+      </div>
+      <div class="step-item">
+        <div class="step-item-label">募集要項</div>
+        <p>各ポジションの要件を整理。スキルより人物像を前面に</p>
+      </div>
+      <div class="step-item">
+        <div class="step-item-label">HRMos</div>
+        <p>採用フロー・管理体制を整備。応募があってもすぐ動ける状態に</p>
+      </div>
     </div>
   </div>
-  <table class="tbl">
-    <thead><tr><th>ポジション</th><th>求める人物像</th><th>採用アプローチ</th></tr></thead>
-    <tbody>
-      <tr>
-        <td><span class="tag green">AIエンジニア</span></td>
-        <td>LLM・プロダクト開発経験<br>リアル×オンラインの掛け合わせに興味<br>AI×ホテル業務に挑戦したい人</td>
-        <td>田原・井上と要件定義（4月）<br>スカウト媒体（Green・Findy）<br>DX×ホテルの面白さを前面に</td>
-      </tr>
-      <tr>
-        <td><span class="tag gold">マーケ責任者</span></td>
-        <td>デジタルマーケ・SNS運用経験<br>経営に近いポジションを望む人<br>ホテル・観光業界への興味</td>
-        <td>募集要項をシンプルに整理（5月）<br>Wantedlyでストーリー型訴求<br>カジュアル面談から始める設計</td>
-      </tr>
-      <tr>
-        <td><span class="tag blue">土地仕入れ</span></td>
-        <td>不動産・デベロッパー経験<br>実績あり、ネットワークあり<br>カルチャーフィット</td>
-        <td>ターゲット企業リスト作成<br>不動産業界向け媒体を選定<br>リファラル採用を優先的に活用</td>
-      </tr>
-    </tbody>
-  </table>
-  <div class="msg gold" style="margin-top:16px">
-    <div class="msg-label">リファラルインセンティブ</div>
-    <p>紹介による採用には <strong>50〜100万円</strong> のインセンティブを設計。社内に告知します（4月）。</p>
+
+  <div class="step">
+    <div class="step-head">
+      <span class="step-badge">Step 2</span>
+      <span class="step-title">発信をはじめる</span>
+      <span class="step-period">4月〜</span>
+    </div>
+    <div class="step-body">
+      <div class="step-item">
+        <div class="step-item-label">X（会社） — 週2〜3本</div>
+        <p>開業ストーリー・ホテルの裏側・スタッフ紹介</p>
+      </div>
+      <div class="step-item">
+        <div class="step-item-label">Instagram — 週2〜3本</div>
+        <p>ホテルのビジュアル・空間・カフェの日常</p>
+      </div>
+      <div class="step-item">
+        <div class="step-item-label">note — 週1本</div>
+        <p>開業奮闘日記・スタッフインタビュー・会社の思想</p>
+      </div>
+      <div class="step-item">
+        <div class="step-item-label">PRTIMES — 月1〜2本</div>
+        <p>開業PR・実績リリース・採用情報の公式発信</p>
+      </div>
+    </div>
   </div>
 </div>
 
 
-<!-- 06 -->
+<!-- ══ 10. 具体的にやること ══ -->
 <div class="section">
-  <div class="sec-num">06</div>
-  <h2 class="sec-title">2年間の採用目標</h2>
-  <p class="sec-sub">2026〜2027年の2年間で</p>
-  <div class="kpis" style="margin-bottom:28px">
-    <div class="kpi">
-      <div class="kpi-label">正社員（ホテル支配人・本部）</div>
-      <div class="kpi-val">20<small> 名</small></div>
-    </div>
-    <div class="kpi gold">
-      <div class="kpi-label">アルバイト（各施設現場）</div>
-      <div class="kpi-val">60<small> 名</small></div>
-    </div>
-    <div class="kpi blue">
-      <div class="kpi-label">合計採用</div>
-      <div class="kpi-val">80<small> 名</small></div>
-    </div>
-  </div>
-  <div class="dlabel">施設ごとのスケジュール（確認中）</div>
-  <table class="tbl">
-    <thead><tr><th>施設名</th><th>開業予定</th><th>特徴</th><th>採用開始</th></tr></thead>
-    <tbody>
-      <tr><td>住吉長屋ホテル</td><td>2026年5月</td><td>無人型</td><td class="muted">確認中</td></tr>
-      <tr><td>春吉ホテル1</td><td>2026年10月</td><td>カフェ併設</td><td class="green">2026年4月〜</td></tr>
-      <tr><td>春吉ホテル2</td><td>2026年12月</td><td>—</td><td class="green">2026年6月〜</td></tr>
-      <tr><td>祇園町 LAID BACK</td><td>2027年2月</td><td>プール、カフェ</td><td class="green">2026年8月〜</td></tr>
-      <tr><td>大名 Le Réservoir</td><td>2028年春</td><td>110室、プール、カフェ</td><td class="muted">2027年中〜</td></tr>
-      <tr><td>今泉ホテル</td><td>2028年春</td><td>カフェ併設</td><td class="muted">2027年中〜</td></tr>
-    </tbody>
-  </table>
-</div>
-
-
-<!-- 07 -->
-<div class="section">
-  <div class="sec-num">07</div>
+  <div class="sec-num">10</div>
   <h2 class="sec-title">具体的にやること</h2>
   <p class="sec-sub">制作・発信・管理は採用広報チームが担当。みなさんは情報提供と確認だけでOKです。</p>
+
   <div class="timeline">
     <div class="tl-header">
       <div>時期</div>
@@ -429,69 +712,12 @@ body{font-family:system-ui,-apple-system,sans-serif;font-size:15px;line-height:1
 </div>
 
 
-<!-- 08 -->
+<!-- ══ 11. 各メディアで発信する内容 ══ -->
 <div class="section">
-  <div class="sec-num">08</div>
-  <h2 class="sec-title">発信の前に、まず「受け皿」を整える</h2>
-  <p class="sec-sub">発信を見て「気になった」人が来たとき、応募・問い合わせできる場所が整っていることが先決です。</p>
-  <div class="step">
-    <div class="step-head">
-      <span class="step-badge">Step 1</span>
-      <span class="step-title">受け皿を整える</span>
-      <span class="step-period">3〜4月</span>
-    </div>
-    <div class="step-body">
-      <div class="step-item">
-        <div class="step-item-label">採用サイト</div>
-        <p>CEOメッセージ・支配人インタビュー・募集要項を独立設計</p>
-      </div>
-      <div class="step-item">
-        <div class="step-item-label">Wantedly</div>
-        <p>会社の世界観・MVVを更新。ストーリー記事を月1本ペースで</p>
-      </div>
-      <div class="step-item">
-        <div class="step-item-label">募集要項</div>
-        <p>各ポジションの要件を整理。スキルより人物像を前面に</p>
-      </div>
-      <div class="step-item">
-        <div class="step-item-label">HRMos</div>
-        <p>採用フロー・管理体制を整備。応募があってもすぐ動ける状態に</p>
-      </div>
-    </div>
-  </div>
-  <div class="step">
-    <div class="step-head">
-      <span class="step-badge">Step 2</span>
-      <span class="step-title">発信をはじめる</span>
-      <span class="step-period">4月〜</span>
-    </div>
-    <div class="step-body">
-      <div class="step-item">
-        <div class="step-item-label">X（会社） — 週2〜3本</div>
-        <p>開業ストーリー・ホテルの裏側・スタッフ紹介</p>
-      </div>
-      <div class="step-item">
-        <div class="step-item-label">Instagram — 週2〜3本</div>
-        <p>ホテルのビジュアル・空間・カフェの日常</p>
-      </div>
-      <div class="step-item">
-        <div class="step-item-label">note — 週1本</div>
-        <p>開業奮闘日記・スタッフインタビュー・会社の思想</p>
-      </div>
-      <div class="step-item">
-        <div class="step-item-label">PRTIMES — 月1〜2本</div>
-        <p>開業PR・実績リリース・採用情報の公式発信</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!-- 09 -->
-<div class="section">
-  <div class="sec-num">09</div>
+  <div class="sec-num">11</div>
   <h2 class="sec-title">各メディアで発信する内容</h2>
   <p class="sec-sub">それぞれのメディアで役割を分け、採用・集客・ファン化の動線をつくります。</p>
+
   <div class="media-grid">
     <div class="media-card">
       <div class="media-head">
